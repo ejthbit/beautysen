@@ -10,7 +10,7 @@ export function Home() {
   return (
     <>
       <Helmet>
-        <title>BeautySen – estetická medicína | botulotoxin Praha</title>
+        <title>BeautySen – estetická medicína | botulotoxin Frýdek-Místek</title>
 
         <meta
           name="description"
@@ -51,7 +51,7 @@ export function Home() {
         />
         <meta
           name="twitter:title"
-          content="BeautySen – estetická medicína | botulotoxin Praha"
+          content="BeautySen – estetická medicína | botulotoxin Frýdek-Místek"
         />
         <meta
           name="twitter:description"

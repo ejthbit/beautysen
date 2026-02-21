@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "upload": "./deploy.sh"
   },
   "dependencies": {
     "react-helmet-async": "^2.0.5",
