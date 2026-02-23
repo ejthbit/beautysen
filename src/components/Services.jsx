@@ -39,13 +39,13 @@ export const Services = () => {
               <div>
                 <p className="text-xl font-medium text-[#2a2320] mb-2">Horní část obličeje</p>
                 <ul className="space-y-1">
-                  {['Čelo a mračivka', 'Vrásky kolem očí (vějířky)', 'Brow lift', 'Nadměrné pocení'].map((i) => (
+                  {['Čelo a mračivka', 'Vrásky kolem očí (vějířky)', 'Brow lift', 'Nadměrné pocení'].map((area) => (
                     <li
-                      key={i}
+                      key={area}
                       className="text-xl text-[#6b6260] flex items-center gap-2"
                     >
                       <span className="w-1 h-px bg-[#8d6e63]/50" />
-                      {i}
+                      {area}
                     </li>
                   ))}
                 </ul>
@@ -58,13 +58,13 @@ export const Services = () => {
                     'Nefertiti neck lift',
                     'Masseter (skřípání zubů)',
                     'Platysma (krk)',
-                  ].map((i) => (
+                  ].map((area) => (
                     <li
-                      key={i}
+                      key={area}
                       className="text-xl text-[#6b6260] flex items-center gap-2"
                     >
                       <span className="w-1 h-px bg-[#8d6e63]/50" />
-                      {i}
+                      {area}
                     </li>
                   ))}
                 </ul>
@@ -76,9 +76,9 @@ export const Services = () => {
     },
     {
       title: 'Profhilo®',
-      subtitle: 'Hyaluronové výplně',
+      subtitle: 'Kyselina hyaluronová',
       description:
-        'Jsou přirozené látky tělu vlastní, které se používají k modelaci kontur obličeje, doplnění objemu a vyhlazení hlubších vrásek. Stimulují tvorbu kolagenu a elastinu a pomáhají s hojením jizev.',
+        'Je injekční ošetření s vysokou koncentrací kyseliny hyaluronové, které slouží k hloubkové hydrataci a zlepšení kvality pleti. Stimuluje tvorbu kolagenu a elastinu, čímž pomáhá zpevnit pokožku a redukovat jemné vrásky.',
       details: (
         <div className="space-y-5">
           <p className="text-[#5a5350] leading-relaxed">
@@ -110,13 +110,13 @@ export const Services = () => {
                 'Obličej a krk – brada, tváře, krk a dekolt',
                 'Jizvy a strie – akné, chirurgické zákroky, Císařský řez',
                 'Labia – omlazení a vyhlazení struktury',
-              ].map((i) => (
+              ].map((area) => (
                 <li
-                  key={i}
+                  key={area}
                   className="text-xl text-[#6b6260] flex items-center gap-2"
                 >
                   <span className="w-1 h-px bg-[#8d6e63]/50" />
-                  {i}
+                  {area}
                 </li>
               ))}
             </ul>
@@ -136,33 +136,30 @@ export const Services = () => {
         <h2 className="text-5xl md:text-6xl font-light text-[#2a2320]">Služby</h2>
       </div>
 
-      {/* Service rows */}
-      <div className="border-t border-[#d4c5bb]">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="border-b border-[#d4c5bb] transition-colors duration-300"
-            style={{ backgroundColor: index % 2 === 0 ? '#f7f5f2' : '#f0ece7' }}
-          >
-            <div className="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-16">
-              <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-start">
-                {/* Content + CTA */}
-                <div className="md:col-span-8 space-y-5">
-                  <span className="section-label text-[#8d6e63]">{service.subtitle}</span>
-                  <h3 className="text-3xl md:text-4xl font-light text-[#2a2320] tracking-wide">{service.title}</h3>
-                  <p className="text-[#6b6260] text-base leading-relaxed max-w-2xl pt-1">{service.description}</p>
-                  <button
-                    onClick={() => setModalContent(service)}
-                    className="inline-flex items-center gap-3 section-label text-[#8d6e63] hover:gap-5 transition-all duration-300"
-                  >
-                    <span>Zjistit více</span>
-                    <span className="text-base leading-none">→</span>
-                  </button>
-                </div>
+      {/* Service grid */}
+      <div className="border-b border-[#d4c5bb]">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2">
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              className={`px-6 md:px-12 py-12 md:py-16 relative flex flex-col ${index === 0 ? 'border-b md:border-b-0' : ''} border-[#d4c5bb]`}
+            >
+              {index === 0 && <span className="hidden md:block absolute right-0 top-1/4 h-1/2 w-px bg-[#d4c5bb]" />}
+              <div className="flex flex-col h-full space-y-5">
+                <span className="section-label text-[#8d6e63]">{service.subtitle}</span>
+                <h3 className="text-3xl md:text-4xl font-light text-[#2a2320] tracking-wide">{service.title}</h3>
+                <p className="text-[#6b6260] text-base leading-relaxed pt-1">{service.description}</p>
+                <button
+                  onClick={() => setModalContent(service)}
+                  className="inline-flex items-center gap-3 section-label text-[#8d6e63] hover:gap-5 transition-all duration-300 mt-auto pt-4"
+                >
+                  <span>Zjistit více</span>
+                  <span className="text-base leading-none">→</span>
+                </button>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* Modal */}
@@ -173,6 +170,7 @@ export const Services = () => {
           aria-labelledby="modal-title"
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#2a2320]/70 backdrop-blur-sm"
           onClick={(e) => e.target === e.currentTarget && setModalContent(null)}
+          onKeyDown={(e) => e.key === 'Escape' && setModalContent(null)}
         >
           <div className="bg-[#f7f5f2] max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
             {/* Modal accent bar */}
