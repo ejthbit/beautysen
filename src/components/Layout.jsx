@@ -4,6 +4,35 @@ import { useEffect, useState } from 'react';
 import { NavHashLink } from 'react-router-hash-link';
 import { Helmet } from 'react-helmet-async';
 
+function MapFacade() {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div
+      className="w-full h-full min-h-[300px] relative cursor-pointer bg-[#2a2320]"
+      onClick={() => setLoaded(true)}
+      role="button"
+      aria-label="Zobrazit mapu"
+    >
+      {loaded ? (
+        <iframe
+          title="BeautySen – mapa, T. G. Masaryka 602, Frýdek-Místek"
+          src="https://web-2022.webnode.it/widgets/googlemaps/?z=15&amp;a=t%C5%99.+T.+G.+Masaryka+602%2C+Fr%C3%BDdek%2C+738+01+Fr%C3%BDdek-M%C3%ADstek"
+          style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
+          loading="lazy"
+        />
+      ) : (
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-[#c8bdb8]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span className="text-sm tracking-widest uppercase">Zobrazit mapu</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function NotFound() {
   return (
     <div className="min-h-screen mx-auto max-w-7xl px-2 py-4 flex flex-col items-center justify-center text-2xl">
@@ -69,7 +98,7 @@ function TopBar() {
             to="/"
             onClick={() => window.scrollTo(0, 0)}
             className={({ isActive }) =>
-              `transition ${isActive ? 'text-[#8d6e63] text-xl' : 'text-gray-700 hover:text-[#8d6e63] text-xl'}`
+              `transition ${isActive ? 'text-[#7a5e53] text-xl' : 'text-gray-700 hover:text-[#7a5e53] text-xl'}`
             }
           >
             Domů
@@ -78,7 +107,7 @@ function TopBar() {
             onClick={() => window.scrollTo(0, 0)}
             to="/o-nas"
             className={({ isActive }) =>
-              `transition ${isActive ? 'text-[#8d6e63] text-xl' : 'text-gray-700 hover:text-[#8d6e63] text-xl'}`
+              `transition ${isActive ? 'text-[#7a5e53] text-xl' : 'text-gray-700 hover:text-[#7a5e53] text-xl'}`
             }
           >
             O nás
@@ -87,7 +116,7 @@ function TopBar() {
             smooth
             to="/#cenik"
             elementId="cenik"
-            className="text-gray-700 hover:text-[#8d6e63] text-xl"
+            className="text-gray-700 hover:text-[#7a5e53] text-xl"
           >
             Ceník
           </NavHashLink>
@@ -95,7 +124,7 @@ function TopBar() {
             smooth
             to="/#kontakt"
             elementId="kontakt"
-            className="text-gray-700 hover:text-[#8d6e63] text-xl"
+            className="text-gray-700 hover:text-[#7a5e53] text-xl"
           >
             Kontakt
           </NavHashLink>
@@ -184,7 +213,7 @@ export function Contact() {
           <div>
             <div className="flex items-center gap-4 mb-4">
               <div className="w-8 h-px bg-[#8d6e63]/70" />
-              <span className="section-label text-[#8d6e63]/80">Najdete nás</span>
+              <span className="section-label text-[#7a5e53]/80">Najdete nás</span>
             </div>
             <h2 className="text-5xl font-light text-white mb-12">Kontakt</h2>
 
@@ -194,7 +223,7 @@ export function Contact() {
                 <p className="text-white text-lg font-light">BeautySen</p>
                 <p>T. G. Masaryka 602, Frýdek</p>
                 <p>738 01 Frýdek-Místek</p>
-                <p className="section-label text-[#8d6e63]/70 mt-2">Přízemí — Gynekologie MUDr. Vaňka</p>
+                <p className="section-label text-[#7a5e53]/70 mt-2">Přízemí — Gynekologie MUDr. Vaňka</p>
               </div>
 
               {/* Phone & Email */}
@@ -218,7 +247,7 @@ export function Contact() {
               {/* CTA */}
               <a
                 href="https://beautysen.cz/rezervace"
-                className="inline-flex items-center gap-3 section-label text-[#8d6e63] hover:gap-5 transition-all duration-300 hover:text-[#c9a882]"
+                className="inline-flex items-center gap-3 section-label text-[#7a5e53] hover:gap-5 transition-all duration-300 hover:text-[#c9a882]"
               >
                 <span>Objednejte se</span>
                 <span className="text-base leading-none">→</span>
@@ -232,12 +261,7 @@ export function Contact() {
 
           {/* Right: map */}
           <div className="rounded-sm overflow-hidden min-h-[300px] md:min-h-0 opacity-85">
-            <iframe
-              title="BeautySen – mapa, T. G. Masaryka 602, Frýdek-Místek"
-              src="https://web-2022.webnode.it/widgets/googlemaps/?z=15&amp;a=t%C5%99.+T.+G.+Masaryka+602%2C+Fr%C3%BDdek%2C+738+01+Fr%C3%BDdek-M%C3%ADstek"
-              style={{ top: '0%', left: '0%', width: '100%', height: '100%' }}
-              loading="lazy"
-            />
+            <MapFacade />
           </div>
         </div>
       </div>

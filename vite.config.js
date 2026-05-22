@@ -7,4 +7,7 @@ export default defineConfig({
     copyPublicDir: true,
     outDir: 'build',
   },
+  ssr: {
+    noExternal: ['react-helmet-async'],
+  },
 });

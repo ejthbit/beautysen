@@ -5,7 +5,7 @@ export default function Hero() {
     <>
       {/* HERO */}
       <section className="min-h-screen bg-white">
-        <section className="bg-[url(../public/img/bg.png)] min-h-[75vh] pt-5 content-center">
+        <section className="bg-[url(/img/bg.webp)] min-h-[75vh] pt-5 content-center">
           <div className="max-w-6xl mx-auto px-6 md:px-12 py-28 md:whitespace-nowrap">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
               {/* LEFT – TEXT */}

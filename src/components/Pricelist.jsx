@@ -28,7 +28,7 @@ export const Pricelist = () => {
       <div className="max-w-3xl mx-auto px-6 md:px-12">
         {/* Header */}
         <h2 className="text-5xl font-light text-[#2a2320] mb-6">Ceník</h2>
-        <p className="text-xl text-[#9a8f8a] italic mb-16 leading-relaxed max-w-sm">
+        <p className="text-xl text-[#6b6260] italic mb-16 leading-relaxed max-w-sm">
           Ceny se mohou lišit dle rozsahu ošetření a množství aplikovaného materiálu. Přesná cena je vždy stanovena při
           osobní konzultaci.
         </p>
@@ -39,7 +39,7 @@ export const Pricelist = () => {
             <div key={idx}>
               {/* Category label + rule */}
               <div className="flex items-center gap-5 mb-6">
-                <span className="section-label text-[#8d6e63]">{section.category}</span>
+                <span className="section-label text-[#7a5e53]">{section.category}</span>
                 <div className="h-px bg-[#d4c5bb] flex-1" />
               </div>
 
@@ -53,12 +53,12 @@ export const Pricelist = () => {
                     <div className="pr-4">
                       <span className="text-base text-[#2a2320]">{item.label}</span>
                       {item.note && (
-                        <span className="block text-xs tracking-wider text-[#9a8f8a] uppercase mt-0.5">
+                        <span className="block text-xs tracking-wider text-[#6b6260] uppercase mt-0.5">
                           {item.note}
                         </span>
                       )}
                     </div>
-                    <span className="text-base font-medium text-[#8d6e63] flex-shrink-0">{item.price}</span>
+                    <span className="text-base font-medium text-[#7a5e53] flex-shrink-0">{item.price}</span>
                   </div>
                 ))}
               </div>
@@ -68,11 +68,11 @@ export const Pricelist = () => {
 
         {/* Footer note */}
         <div className="mt-16 pt-8 border-t border-[#d4c5bb] text-center">
-          <p className="text-xl text-[#9a8f8a] italic">
+          <p className="text-xl text-[#6b6260] italic">
             Máte dotaz k ceně nebo postupu?{' '}
             <a
               href="#kontakt"
-              className="text-[#8d6e63] underline underline-offset-2 hover:text-[#6b5048] transition-colors"
+              className="text-[#7a5e53] underline underline-offset-2 hover:text-[#6b5048] transition-colors"
             >
               Neváhejte nás kontaktovat.
             </a>

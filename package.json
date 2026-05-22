@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "prerender": "node prerender.js",
     "preview": "vite preview",
     "upload": "./deploy.sh"
   },

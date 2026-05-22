@@ -30,11 +30,11 @@ export const Services = () => {
               </li>
             ))}
           </ul>
-          <p className="text-xs text-[#9a8f8a] italic border-l-2 border-[#8d6e63]/30 pl-4">
+          <p className="text-xs text-[#6b6260] italic border-l-2 border-[#8d6e63]/30 pl-4">
             Ošetření není vhodné během těhotenství a kojení. Vše je vždy individuálně posouzeno při konzultaci.
           </p>
           <div className="border-t border-[#e8e0d8] pt-5">
-            <p className="section-label text-[#8d6e63] mb-4">Oblasti aplikace</p>
+            <p className="section-label text-[#7a5e53] mb-4">Oblasti aplikace</p>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <p className="text-xl font-medium text-[#2a2320] mb-2">Horní část obličeje</p>
@@ -85,7 +85,7 @@ export const Services = () => {
             Používáme prémiové materiály Profhilo® pro hloubkovou hydrataci a harmonizaci rysů.
           </p>
           <div className="border-t border-[#e8e0d8] pt-5 space-y-4">
-            <p className="section-label text-[#8d6e63]">Rozdíl mezi Profhilo® a Profhilo Structura®</p>
+            <p className="section-label text-[#7a5e53]">Rozdíl mezi Profhilo® a Profhilo Structura®</p>
             <div className="space-y-3">
               <div className="border-l-2 border-[#8d6e63]/30 pl-4">
                 <p className="text-xl font-medium text-[#2a2320] mb-1">Profhilo®</p>
@@ -104,7 +104,7 @@ export const Services = () => {
             </div>
           </div>
           <div className="border-t border-[#e8e0d8] pt-5">
-            <p className="section-label text-[#8d6e63] mb-4">Oblasti aplikace</p>
+            <p className="section-label text-[#7a5e53] mb-4">Oblasti aplikace</p>
             <ul className="space-y-1">
               {[
                 'Obličej a krk – brada, tváře, krk a dekolt',
@@ -146,12 +146,12 @@ export const Services = () => {
             >
               {index === 0 && <span className="hidden md:block absolute right-0 top-1/4 h-1/2 w-px bg-[#d4c5bb]" />}
               <div className="flex flex-col h-full space-y-5">
-                <span className="section-label text-[#8d6e63]">{service.subtitle}</span>
+                <span className="section-label text-[#7a5e53]">{service.subtitle}</span>
                 <h3 className="text-3xl md:text-4xl font-light text-[#2a2320] tracking-wide">{service.title}</h3>
                 <p className="text-[#6b6260] text-base leading-relaxed pt-1">{service.description}</p>
                 <button
                   onClick={() => setModalContent(service)}
-                  className="inline-flex items-center gap-3 section-label text-[#8d6e63] hover:gap-5 transition-all duration-300 mt-auto pt-4"
+                  className="inline-flex items-center gap-3 section-label text-[#7a5e53] hover:gap-5 transition-all duration-300 mt-auto pt-4"
                 >
                   <span>Zjistit více</span>
                   <span className="text-base leading-none">→</span>
@@ -178,7 +178,7 @@ export const Services = () => {
             <div className="p-8 md:p-10">
               <div className="flex justify-between items-start mb-8">
                 <div>
-                  <p className="section-label text-[#8d6e63] mb-2">{modalContent.subtitle}</p>
+                  <p className="section-label text-[#7a5e53] mb-2">{modalContent.subtitle}</p>
                   <h3
                     id="modal-title"
                     className="text-3xl font-light text-[#2a2320]"
@@ -189,7 +189,7 @@ export const Services = () => {
                 <button
                   onClick={() => setModalContent(null)}
                   aria-label="Zavřít"
-                  className="text-[#9a8f8a] hover:text-[#2a2320] transition-colors text-2xl leading-none mt-1 ml-4"
+                  className="text-[#6b6260] hover:text-[#2a2320] transition-colors text-2xl leading-none mt-1 ml-4"
                 >
                   ×
                 </button>
@@ -199,7 +199,7 @@ export const Services = () => {
 
               <button
                 onClick={() => setModalContent(null)}
-                className="mt-10 w-full py-3 border border-[#d4c5bb] text-[#6b6260] text-xl tracking-wider hover:border-[#8d6e63] hover:text-[#8d6e63] transition-colors duration-200"
+                className="mt-10 w-full py-3 border border-[#d4c5bb] text-[#6b6260] text-xl tracking-wider hover:border-[#8d6e63] hover:text-[#7a5e53] transition-colors duration-200"
               >
                 Zavřít
               </button>

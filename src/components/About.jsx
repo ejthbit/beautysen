@@ -64,13 +64,13 @@ export function About() {
 
       <div className="font-serif text-[#2a2320]">
         {/* ── Page intro ────────────────────────────────────────── */}
-        <section className="min-h-[60vh] bg-[url(../public/img/bg.png)] bg-cover bg-center flex items-end pt-32 pb-16 relative">
+        <section className="min-h-[60vh] bg-[url(/img/bg.webp)] bg-cover bg-center flex items-end pt-32 pb-16 relative">
           {/* Soft overlay so text is readable */}
           <div className="absolute inset-0 bg-[#f7f5f2]/60" />
           <div className="relative max-w-6xl mx-auto px-6 md:px-12 w-full">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-8 h-px bg-[#8d6e63]" />
-              <span className="section-label text-[#8d6e63]">Bezpečí, důvěra a diskrétnost</span>
+              <span className="section-label text-[#7a5e53]">Bezpečí, důvěra a diskrétnost</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-light text-[#2a2320]">O nás</h1>
             <p className="text-xl text-[#5a5350] mt-4 max-w-lg leading-relaxed">
@@ -87,7 +87,7 @@ export function About() {
               {/* Photo */}
               <div className="relative">
                 <img
-                  src="public/img/foto.webp"
+                  src="/img/foto.webp"
                   alt="MUDr. Eliška Kotek, MBA – lékařka estetické medicíny BeautySen"
                   className="w-full aspect-[3/4] object-cover rounded-sm"
                   width="400"
@@ -102,7 +102,7 @@ export function About() {
               <div className="md:pt-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-8 h-px bg-[#8d6e63]" />
-                  <span className="section-label text-[#8d6e63]">Ošetřovat vás bude</span>
+                  <span className="section-label text-[#7a5e53]">Ošetřovat vás bude</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-light text-[#2a2320] mb-2">MUDr. Eliška Kotek, MBA</h2>
                 <div className="space-y-5">

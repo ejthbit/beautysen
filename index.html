@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="cs">
   <head>
+    <meta charset="UTF-8" />
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
@@ -11,13 +12,17 @@
       crossorigin
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Qwitcher+Grypen:wght@400;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
-      rel="stylesheet"
-    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      />
+    </noscript>
     <link
       rel="icon"
       href="https://www.beautysen.cz/rezervace/wp-content/uploads/2026/01/logo-150x150.webp"
@@ -31,9 +36,9 @@
     <link
       rel="preload"
       as="image"
-      href="/img/bg.png"
+      href="/img/bg.webp"
+      fetchpriority="high"
     />
-    <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
@@ -150,19 +155,20 @@
       }
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-TB9138FTHQ"
-    ></script>
+    <!-- Google tag (gtag.js) – deferred until after load to avoid blocking LCP -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
-
       gtag('config', 'G-TB9138FTHQ');
+      window.addEventListener('load', function () {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-TB9138FTHQ';
+        document.head.appendChild(s);
+      });
     </script>
     <title>BeautySen - Podpořte svou přirozenou krásu</title>
   </head>

@@ -90,7 +90,7 @@ export function Home() {
                 </p>
                 <NavLink
                   to="/o-nas"
-                  className="inline-flex items-center gap-3 section-label text-[#8d6e63] hover:gap-5 transition-all duration-300 mt-2"
+                  className="inline-flex items-center gap-3 section-label text-[#7a5e53] hover:gap-5 transition-all duration-300 mt-2"
                 >
                   <span>O nás</span>
                   <span className="text-base leading-none">→</span>
