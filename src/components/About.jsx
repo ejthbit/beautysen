@@ -8,7 +8,7 @@ export function About() {
         <title>O nás | BeautySen</title>
         <meta
           name="description"
-          content="Estetická medicína BeautySen – bezpečí, důvěra a diskrétnost. Ošetření provádí MUDr. Eliška Kotek, MBA."
+          content="Estetická medicína BeautySen ve Frýdku-Místku – bezpečí, důvěra a diskrétnost pro klienty z Frýdku-Místku i Ostravy. Ošetření provádí MUDr. Eliška Kotek, MBA."
         />
         <link
           rel="canonical"

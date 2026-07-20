@@ -17,6 +17,7 @@ export default function Hero() {
                 </p>
                 <p className="text-lg text-gray-600 mb-10 max-w-xl">
                   Profesionální aplikace botulotoxinu a kyseliny hyaluronové s respektem k vaší mimice a osobnosti.
+                  Naše klinika sídlí ve Frýdku-Místku, jen kousek od Ostravy.
                 </p>
                 <div className="flex flex-col sm:flex-row flex-wrap gap-4">
                   <a

@@ -224,6 +224,7 @@ export function Contact() {
                 <p>T. G. Masaryka 602, Frýdek</p>
                 <p>738 01 Frýdek-Místek</p>
                 <p className="section-label text-[#7a5e53]/70 mt-2">Přízemí — Gynekologie MUDr. Vaňka</p>
+                <p className="text-sm text-[#9a8f8a] mt-2">Přibližně 25 minut od Ostravy autem</p>
               </div>
 
               {/* Phone & Email */}
