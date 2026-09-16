@@ -12,7 +12,7 @@ export default function ProcedureStepper() {
       {/* Section label */}
       <div className="flex items-center gap-4 mb-4">
         <div className="w-8 h-px bg-[#8d6e63]/70" />
-        <span className="section-label text-[#8d6e63]/80">Průběh zákroku</span>
+        <span className="section-label text-[#c9a882]">Průběh zákroku</span>
       </div>
 
       {/* Heading */}
@@ -29,14 +29,14 @@ export default function ProcedureStepper() {
         <ol className="space-y-10">
           {steps.map((step, index) => (
             <li
-              key={index}
+              key={step}
               className="flex items-start gap-8"
             >
               {/* Numbered circle */}
               <div className="relative z-10 flex-shrink-0 w-8 h-8 rounded-full border border-[#8d6e63]/50 bg-[#2a2320] flex items-center justify-center">
                 <span
                   className="text-xs"
-                  style={{ color: '#8d6e63' }}
+                  style={{ color: '#c9a882' }}
                 >
                   {index + 1}
                 </span>
@@ -56,7 +56,7 @@ export default function ProcedureStepper() {
         <div className="w-8 h-px bg-[#8d6e63]/50" />
         <a
           href="https://beautysen.cz/rezervace"
-          className="section-label text-[#8d6e63] hover:text-[#c9a882] transition-colors duration-300 inline-flex items-center gap-3 hover:gap-5"
+          className="section-label text-[#c9a882] hover:text-white transition-colors duration-300 inline-flex items-center gap-3 hover:gap-5"
         >
           <span>Objednat konzultaci</span>
           <span className="text-base leading-none">→</span>

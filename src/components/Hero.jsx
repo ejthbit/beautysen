@@ -1,11 +1,11 @@
-import { NavHashLink } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 
 export default function Hero() {
   return (
     <>
       {/* HERO */}
       <section className="min-h-screen bg-white">
-        <section className="bg-[url(/img/bg.webp)] min-h-[75vh] pt-5 content-center">
+        <section className="bg-[url(/img/bg.avif)] min-h-[75vh] pt-5 content-center">
           <div className="max-w-6xl mx-auto px-6 md:px-12 py-28 md:whitespace-nowrap">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
               {/* LEFT – TEXT */}
@@ -26,14 +26,14 @@ export default function Hero() {
                   >
                     Objednat konzultaci
                   </a>
-                  <NavHashLink
+                  <HashLink
                     smooth
                     to="/#sluzby"
                     elementId="sluzby"
                     className="bg-white border border-[#8d6e63] text-[#8d6e63] px-8 py-4 md hover:bg-[#8d6e63] hover:text-white transition text-center"
                   >
                     Naše služby
-                  </NavHashLink>
+                  </HashLink>
                 </div>
               </div>
             </div>

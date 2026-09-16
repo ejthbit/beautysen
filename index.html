@@ -2,25 +2,18 @@
 <html lang="cs">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <!-- Fonts are self-hosted (see public/fonts.css) — no Google Fonts
+         round trip, loaded async so it can't delay LCP. -->
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      href="/fonts.css"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        href="/fonts.css"
       />
     </noscript>
     <link
@@ -36,7 +29,8 @@
     <link
       rel="preload"
       as="image"
-      href="/img/bg.webp"
+      href="/img/bg.avif"
+      type="image/avif"
       fetchpriority="high"
     />
     <meta

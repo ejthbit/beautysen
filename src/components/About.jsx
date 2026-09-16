@@ -64,7 +64,7 @@ export function About() {
 
       <div className="font-serif text-[#2a2320]">
         {/* ── Page intro ────────────────────────────────────────── */}
-        <section className="min-h-[60vh] bg-[url(/img/bg.webp)] bg-cover bg-center flex items-end pt-32 pb-16 relative">
+        <section className="min-h-[60vh] bg-[url(/img/bg.avif)] bg-cover bg-center flex items-end pt-32 pb-16 relative">
           {/* Soft overlay so text is readable */}
           <div className="absolute inset-0 bg-[#f7f5f2]/60" />
           <div className="relative max-w-6xl mx-auto px-6 md:px-12 w-full">
@@ -86,14 +86,20 @@ export function About() {
             <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
               {/* Photo */}
               <div className="relative">
-                <img
-                  src="/img/foto.webp"
-                  alt="MUDr. Eliška Kotek, MBA – lékařka estetické medicíny BeautySen"
-                  className="w-full aspect-[3/4] object-cover rounded-sm"
-                  width="400"
-                  height="533"
-                  loading="lazy"
-                />
+                <picture>
+                  <source
+                    srcSet="/img/foto.avif"
+                    type="image/avif"
+                  />
+                  <img
+                    src="/img/foto.webp"
+                    alt="MUDr. Eliška Kotek, MBA – lékařka estetické medicíny BeautySen"
+                    className="w-full aspect-[3/4] object-cover rounded-sm"
+                    width="400"
+                    height="533"
+                    loading="lazy"
+                  />
+                </picture>
                 {/* Decorative offset border */}
                 <div className="absolute -bottom-4 -right-4 w-2/3 h-2/3 border border-[#8d6e63]/20 rounded-sm -z-10 hidden md:block" />
               </div>
