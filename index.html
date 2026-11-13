@@ -2,25 +2,18 @@
 <html lang="cs">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <!-- Fonts are self-hosted (see public/fonts.css) — no Google Fonts
+         round trip, loaded async so it can't delay LCP. -->
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      href="/fonts.css"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        href="/fonts.css"
       />
     </noscript>
     <link
@@ -36,7 +29,8 @@
     <link
       rel="preload"
       as="image"
-      href="/img/bg.webp"
+      href="/img/bg.avif"
+      type="image/avif"
       fetchpriority="high"
     />
     <meta
@@ -49,7 +43,7 @@
     />
     <meta
       name="description"
-      content="Profesionální aplikace botulotoxinu a kyseliny hyaluronové ve Frýdku. Vyhlazení vrásek, přirozený efekt, certifikovaný lékař. Objednejte se online – BeautySen."
+      content="Botulotoxin, biostimulace pleti (polynukleotidy, Rejuran, Profhilo®), výplně kyselinou hyaluronovou a skincare poradenství v klinice ve Frýdku-Místku, přibližně 25 minut jízdy od Ostravy. Certifikovaný lékař. Objednejte se online – BeautySen."
     />
     <meta
       name="author"
@@ -67,11 +61,11 @@
     <!-- OpenGraph -->
     <meta
       property="og:title"
-      content="Botox Frýdek – BeautySen"
+      content="Botox Frýdek-Místek a okolí Ostravy – BeautySen"
     />
     <meta
       property="og:description"
-      content="Profesionální aplikace botulotoxinu a kyseliny hyaluronové ve Frýdku. Přirozené výsledky a bezpečný zákrok."
+      content="Profesionální aplikace botulotoxinu a kyseliny hyaluronové ve Frýdku-Místku. Klienty vítáme i z Ostravy a okolí. Přirozené výsledky, bezpečný zákrok."
     />
     <meta
       property="og:type"
@@ -109,11 +103,11 @@
     />
     <meta
       name="twitter:title"
-      content="Botox Frýdek – BeautySen"
+      content="Botox Frýdek-Místek a okolí Ostravy – BeautySen"
     />
     <meta
       name="twitter:description"
-      content="Profesionální aplikace botulotoxinu a kyseliny hyaluronové ve Frýdku. Přirozené výsledky a bezpečný zákrok."
+      content="Profesionální aplikace botulotoxinu a kyseliny hyaluronové ve Frýdku-Místku. Klienty vítáme i z Ostravy a okolí. Přirozené výsledky, bezpečný zákrok."
     />
     <meta
       name="twitter:image"
@@ -122,7 +116,7 @@
 
     <meta
       name="keywords"
-      content="BeautySen,botox,frýdek,botulotoxin,profhilo,estetická medicína,kyselina hyaluronová,vyhlazení vrásek"
+      content="BeautySen,botox Frýdek-Místek,botox Ostrava,botulotoxin,profhilo,polynukleotidy,rejuran,skin booster,výplň rtů,nosoretní rýhy,skincare poradenství,estetická medicína Ostrava,kyselina hyaluronová,vyhlazení vrásek"
     />
 
     <!-- JSON-LD Structured Data -->
@@ -134,7 +128,7 @@
         "name": "BeautySen",
         "url": "https://www.beautysen.cz",
         "logo": "https://www.beautysen.cz/rezervace/wp-content/uploads/2026/01/logo-150x150.webp",
-        "description": "Profesionální aplikace botulotoxinu a kyseliny hyaluronové ve Frýdku-Místku. Vyhlazení vrásek, přirozený efekt, certifikovaný lékař.",
+        "description": "Botulotoxin, biostimulace pleti polynukleotidy a kyselinou hyaluronovou, výplně kyselinou hyaluronovou a skincare poradenství ve Frýdku-Místku, přibližně 25 minut jízdy od Ostravy. Certifikovaný lékař.",
         "telephone": "+420733241881",
         "email": "info@beautysen.cz",
         "address": {
@@ -144,12 +138,17 @@
           "postalCode": "738 01",
           "addressCountry": "CZ"
         },
+        "areaServed": [
+          { "@type": "City", "name": "Frýdek-Místek" },
+          { "@type": "City", "name": "Ostrava" },
+          { "@type": "AdministrativeArea", "name": "Moravskoslezský kraj" }
+        ],
         "priceRange": "Kč Kč",
         "medicalSpecialty": "Aesthetic medicine",
-        "employee": {
-          "@type": "Physician",
-          "name": "MUDr. Eliška Kotek, MBA"
-        },
+        "employee": [
+          { "@type": "Physician", "name": "MUDr. Eliška Kotek, MBA" },
+          { "@type": "Physician", "name": "MUDr. Terézia Sobotková" }
+        ],
         "hasMap": "https://maps.google.com/maps?q=T.+G.+Masaryka+602,+Fr%C3%BDdek,+738+01+Fr%C3%BDdek-M%C3%ADstek",
         "sameAs": ["https://www.beautysen.cz"]
       }

@@ -28,9 +28,15 @@
   </FilesMatch>
 
   # Images — long cache (update filenames to bust if needed)
-  <FilesMatch "\.(webp|png|jpg|jpeg|svg|ico|gif)$">
+  <FilesMatch "\.(avif|webp|png|jpg|jpeg|svg|ico|gif)$">
     ExpiresDefault "access plus 6 months"
     Header set Cache-Control "public, max-age=15552000"
+  </FilesMatch>
+
+  # Self-hosted webfonts — content stable, safe to cache forever
+  <FilesMatch "\.(woff2|woff)$">
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
   # HTML — short cache so updates are seen quickly

@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /rezervace/wp-admin/
+Disallow: /rezervace/wp-content/plugins/
+Disallow: /rezervace/wp-content/themes/
+Disallow: /rezervace/wp-*.php
+Disallow: /rezervace/wp-includes/
+Disallow: /rezervace/feed/
+Disallow: /rezervace/comments/feed/
+Disallow: /rezervace/*/feed/
 
 Sitemap: https://www.beautysen.cz/sitemap.xml

@@ -2,7 +2,6 @@ import { NavLink } from 'react-router-dom';
 import { Contact } from './Layout';
 import { Pricelist } from './Pricelist';
 import { Services } from './Services';
-import ProcedureStepper from './Procedure';
 import { Helmet } from 'react-helmet-async';
 import Hero from './Hero';
 
@@ -10,11 +9,11 @@ export function Home() {
   return (
     <>
       <Helmet>
-        <title>BeautySen – estetická medicína | botulotoxin Frýdek-Místek</title>
+        <title>BeautySen – estetická medicína | botulotoxin Frýdek-Místek a Ostrava</title>
 
         <meta
           name="description"
-          content="BeautySen – profesionální aplikace botulotoxinu a kyseliny hyaluronové. Přirozené omlazení bez chirurgického zákroku. Lékařské ošetření MUDr. Eliška Kotek, MBA."
+          content="BeautySen – botulotoxin, biostimulace pleti polynukleotidy a kyselinou hyaluronovou, výplně rtů a skincare poradenství ve Frýdku-Místku, snadno dostupné i pro klienty z Ostravy."
         />
 
         <link
@@ -25,11 +24,11 @@ export function Home() {
         {/* OpenGraph */}
         <meta
           property="og:title"
-          content="BeautySen – estetická medicína"
+          content="BeautySen – estetická medicína ve Frýdku-Místku a Ostravě"
         />
         <meta
           property="og:description"
-          content="Profesionální aplikace botulotoxinu a kyseliny hyaluronové.. Bezpečí, důvěra a diskrétnost."
+          content="Profesionální aplikace botulotoxinu a kyseliny hyaluronové. Bezpečí, důvěra a diskrétnost pro klienty z Frýdku-Místku i Ostravy."
         />
         <meta
           property="og:url"
@@ -51,11 +50,11 @@ export function Home() {
         />
         <meta
           name="twitter:title"
-          content="BeautySen – estetická medicína | botulotoxin Frýdek-Místek"
+          content="BeautySen – estetická medicína | botulotoxin Frýdek-Místek a Ostrava"
         />
         <meta
           name="twitter:description"
-          content="Profesionální aplikace botulotoxinu a kyseliny hyaluronové. Přirozené omlazení bez chirurgického zákroku."
+          content="Profesionální aplikace botulotoxinu a kyseliny hyaluronové ve Frýdku-Místku, snadno dostupné i z Ostravy. Přirozené omlazení bez chirurgického zákroku."
         />
         <meta
           name="twitter:image"
@@ -103,15 +102,20 @@ export function Home() {
         {/* ── Services ─────────────────────────────────────────── */}
         <Services />
 
-        {/* ── Procedure ─────────────────────────────────────────── */}
-        <section className="py-20 md:py-32 bg-[#2a2320]">
-          <div className="max-w-6xl mx-auto px-6 md:px-12">
-            <ProcedureStepper />
-          </div>
-        </section>
-
         {/* ── Pricelist ────────────────────────────────────────── */}
         <Pricelist />
+
+        {/* ── Service area ─────────────────────────────────────── */}
+        <section className="py-16 bg-[#f7f5f2]">
+          <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
+            <h2 className="text-3xl font-light text-[#2a2320] mb-4">Klienti z Frýdku-Místku i Ostravy</h2>
+            <p className="text-lg text-[#5a5350] leading-relaxed">
+              Naše klinika sídlí ve Frýdku-Místku na adrese T. G. Masaryka 602, přibližně 25 minut jízdy autem od
+              Ostravy. Ošetření botulotoxinem, kyselinou hyaluronovou a dalšími zákroky estetické medicíny proto
+              pravidelně vyhledávají i klientky a klienti z Ostravy a celého Moravskoslezského kraje.
+            </p>
+          </div>
+        </section>
 
         {/* ── Contact ──────────────────────────────────────────── */}
         <Contact />

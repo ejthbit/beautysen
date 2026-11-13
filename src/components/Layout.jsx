@@ -1,33 +1,53 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { NavHashLink } from 'react-router-hash-link';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 function MapFacade() {
   const [loaded, setLoaded] = useState(false);
   return (
-    <div
-      className="w-full h-full min-h-[300px] relative cursor-pointer bg-[#2a2320]"
-      onClick={() => setLoaded(true)}
-      role="button"
-      aria-label="Zobrazit mapu"
-    >
+    <div className="w-full h-full min-h-[300px] relative bg-[#2a2320]">
       {loaded ? (
         <iframe
           title="BeautySen – mapa, T. G. Masaryka 602, Frýdek-Místek"
           src="https://web-2022.webnode.it/widgets/googlemaps/?z=15&amp;a=t%C5%99.+T.+G.+Masaryka+602%2C+Fr%C3%BDdek%2C+738+01+Fr%C3%BDdek-M%C3%ADstek"
-          style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
+          style={{
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+          }}
           loading="lazy"
         />
       ) : (
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-[#c8bdb8]">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
-            <circle cx="12" cy="10" r="3"/>
+        <button
+          type="button"
+          onClick={() => setLoaded(true)}
+          aria-label="Zobrazit mapu"
+          className="absolute inset-0 w-full h-full flex flex-col items-center justify-center gap-3 text-[#c8bdb8] cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+            <circle
+              cx="12"
+              cy="10"
+              r="3"
+            />
           </svg>
           <span className="text-sm tracking-widest uppercase">Zobrazit mapu</span>
-        </div>
+        </button>
       )}
     </div>
   );
@@ -103,6 +123,14 @@ function TopBar() {
           >
             Domů
           </NavLink>
+          <HashLink
+            smooth
+            to="/#sluzby"
+            elementId="sluzby"
+            className="text-gray-700 hover:text-[#7a5e53] text-xl"
+          >
+            Služby
+          </HashLink>
           <NavLink
             onClick={() => window.scrollTo(0, 0)}
             to="/o-nas"
@@ -112,26 +140,27 @@ function TopBar() {
           >
             O nás
           </NavLink>
-          <NavHashLink
+          <HashLink
             smooth
             to="/#cenik"
             elementId="cenik"
             className="text-gray-700 hover:text-[#7a5e53] text-xl"
           >
             Ceník
-          </NavHashLink>
-          <NavHashLink
+          </HashLink>
+          <HashLink
             smooth
             to="/#kontakt"
             elementId="kontakt"
             className="text-gray-700 hover:text-[#7a5e53] text-xl"
           >
             Kontakt
-          </NavHashLink>
+          </HashLink>
         </nav>
 
         {/* Mobile hamburger */}
         <button
+          type="button"
           className="md:hidden text-gray-800"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
@@ -158,6 +187,15 @@ function TopBar() {
           >
             Domů
           </NavLink>
+          <HashLink
+            onClick={() => setOpen(false)}
+            smooth
+            to="/#sluzby"
+            elementId="sluzby"
+            className="block"
+          >
+            Služby
+          </HashLink>
           <NavLink
             onClick={() => setOpen(false)}
             to="/o-nas"
@@ -165,7 +203,7 @@ function TopBar() {
           >
             O nás
           </NavLink>
-          <NavHashLink
+          <HashLink
             onClick={() => setOpen(false)}
             smooth
             to="/#cenik"
@@ -173,8 +211,8 @@ function TopBar() {
             className="block"
           >
             Ceník
-          </NavHashLink>
-          <NavHashLink
+          </HashLink>
+          <HashLink
             onClick={() => setOpen(false)}
             smooth
             to="/#kontakt"
@@ -182,7 +220,7 @@ function TopBar() {
             className="block"
           >
             Kontakt
-          </NavHashLink>
+          </HashLink>
         </nav>
       )}
     </header>
@@ -194,6 +232,52 @@ export function Layout({ children }) {
     <div className="relative">
       <TopBar />
       <main>{children}</main>
+      <a
+        href="https://beautysen.cz/rezervace"
+        aria-label="Objednat konzultaci"
+        title="Objednat konzultaci"
+        className="fixed bottom-5 right-5 md:bottom-8 md:right-8 z-40 w-14 h-14 rounded-full bg-[#8d6e63] text-white shadow-lg flex items-center justify-center hover:bg-[#7a5e56] hover:scale-105 transition duration-200"
+      >
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect
+            x="3"
+            y="4"
+            width="18"
+            height="18"
+            rx="2"
+          />
+          <line
+            x1="16"
+            y1="2"
+            x2="16"
+            y2="6"
+          />
+          <line
+            x1="8"
+            y1="2"
+            x2="8"
+            y2="6"
+          />
+          <line
+            x1="3"
+            y1="10"
+            x2="21"
+            y2="10"
+          />
+        </svg>
+      </a>
     </div>
   );
 }
@@ -213,7 +297,7 @@ export function Contact() {
           <div>
             <div className="flex items-center gap-4 mb-4">
               <div className="w-8 h-px bg-[#8d6e63]/70" />
-              <span className="section-label text-[#7a5e53]/80">Najdete nás</span>
+              <span className="section-label text-[#c9a882]">Najdete nás</span>
             </div>
             <h2 className="text-5xl font-light text-white mb-12">Kontakt</h2>
 
@@ -223,7 +307,8 @@ export function Contact() {
                 <p className="text-white text-lg font-light">BeautySen</p>
                 <p>T. G. Masaryka 602, Frýdek</p>
                 <p>738 01 Frýdek-Místek</p>
-                <p className="section-label text-[#7a5e53]/70 mt-2">Přízemí — Gynekologie MUDr. Vaňka</p>
+                <p className="section-label text-[#c9a882] mt-2">Přízemí — Gynekologie MUDr. Vaňka</p>
+                <p className="text-sm text-[#9a8f8a] mt-2">Přibližně 25 minut od Ostravy autem</p>
               </div>
 
               {/* Phone & Email */}
@@ -247,7 +332,7 @@ export function Contact() {
               {/* CTA */}
               <a
                 href="https://beautysen.cz/rezervace"
-                className="inline-flex items-center gap-3 section-label text-[#7a5e53] hover:gap-5 transition-all duration-300 hover:text-[#c9a882]"
+                className="inline-flex items-center gap-3 section-label text-[#c9a882] hover:gap-5 transition-all duration-300 hover:text-white"
               >
                 <span>Objednejte se</span>
                 <span className="text-base leading-none">→</span>

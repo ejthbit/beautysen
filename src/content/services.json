@@ -1,0 +1,623 @@
+{
+  "_help": [
+    "Obsah služeb. Po úpravě uložte, web se v `pnpm dev` obnoví sám; pro nasazení spusťte `pnpm prerender` a `pnpm upload`.",
+    "services: pořadí = pořadí v 'Další služby' a v sitemapě. slug = adresa /sluzby/<slug>/ (neměnit, rozbije odkazy).",
+    "priceCategory / priceLabel musí přesně odpovídat kategorii / položce v src/components/Pricelist.jsx, jinak se ceník na stránce služby nezobrazí. priceLabel může být i seznam více položek.",
+    "sections: bez 'label' = úvodní odstavce; s 'label' = oddíl s nadpisem. {\"use\": \"klíč\"} vloží oddíl ze 'shared'.",
+    "Typy obsahu: text, bullets, steps, note, variants [{title, text}], areas, areaGroups [{title, areas}], lines. **tučně** zvýrazní text.",
+    "menu: pořadí na hlavní stránce; skupina = {group, explainer, services}."
+  ],
+  "menu": [
+    "botulotoxin",
+    "skincare-poradenstvi",
+    {
+      "group": "Biostimulace",
+      "explainer": "biostimulace",
+      "services": ["polynukleotidy", "rejuran", "profhilo-bioremodelace", "skin-booster"]
+    },
+    {
+      "group": "Výplně",
+      "explainer": "vyplne",
+      "services": ["vyplne-rtu", "nosoretni-ryhy"]
+    },
+    "vip-friend-beauty-session"
+  ],
+  "services": [
+    {
+      "slug": "botulotoxin",
+      "title": "Botulotoxin",
+      "priceCategory": "Botulotoxin",
+      "description": "Osvědčená a bezpečná metoda k vyhlazení mimických vrásek a uvolnění nadměrné svalové aktivity.",
+      "sections": [
+        {
+          "content": [
+            {
+              "text": "Působí tak, že dočasně uvolní sval, který vrásku vytváří. Výsledkem je odpočatý a svěží vzhled."
+            },
+            {
+              "bullets": [
+                "Rychlé ošetření",
+                "Minimální diskomfort",
+                "Bez rekonvalescence",
+                "Přirozený efekt",
+                "Účinek 3–6 měsíců"
+              ]
+            },
+            {
+              "note": "Ošetření není vhodné během těhotenství a kojení. Vše je vždy individuálně posouzeno při konzultaci."
+            }
+          ]
+        },
+        {
+          "label": "Oblasti aplikace",
+          "content": [
+            {
+              "areaGroups": [
+                {
+                  "title": "Horní část obličeje",
+                  "areas": ["Čelo a mračivka", "Vrásky kolem očí (vějířky)", "Brow lift", "Nadměrné pocení"]
+                },
+                {
+                  "title": "Spodní část obličeje",
+                  "areas": [
+                    "Gummy smile & Marionette lines",
+                    "Nefertiti neck lift",
+                    "Masseter (skřípání zubů)",
+                    "Platysma (krk)"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Jak probíhá ošetření",
+          "content": [
+            {
+              "steps": [
+                "Konzultace a plán ošetření",
+                "Dezinfekce a značení bodů",
+                "Aplikace (10–20 minut)",
+                "Okamžitý návrat k běžnému režimu",
+                "Kontrola efektu za 10–14 dní"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "skincare-poradenstvi",
+      "title": "Skincare poradenství",
+      "priceCategory": "Péče o pleť",
+      "description": "Hodinová konzultace s analýzou pleti a individuálním plánem domácí péče. Pro normální i problematickou pleť, ve spolupráci s dermatologem.",
+      "sections": [
+        {
+          "content": [
+            {
+              "text": "Domácí péče je základ, na kterém stojí výsledek každého ošetření. Skincare poradenství trvá 60 minut a vychází z toho, v jakém stavu je vaše pleť dnes. Nevybíráme produkty podle trendů, ale podle typu pleti, její bariéry a vašich cílů."
+            }
+          ]
+        },
+        {
+          "label": "Pro koho je poradenství určeno",
+          "content": [
+            {
+              "bullets": [
+                "normální pleť, která potřebuje prevenci, správnou rutinu a ochranu SPF",
+                "problematická pleť: akné a nedokonalosti, nadměrná mastnota nebo suchost, zarudnutí a citlivost, pigmentace, nerovná textura"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Co konzultace zahrnuje",
+          "content": [
+            {
+              "bullets": [
+                "anamnéza a analýza pleti: typ, hydratace, mastnota, citlivost, pigmentace a stav kožní bariéry",
+                "rozbor vaší současné péče a produktů, které používáte",
+                "doporučení domácí rutiny na ráno a večer, včetně aktivních látek a ochrany SPF",
+                "při problematické pleti konzultace postupu s dermatologem",
+                "doporučení ošetření, pokud jsou pro vaši pleť vhodná"
+              ]
+            },
+            {
+              "text": "Pokud nález vyžaduje lékařské vyšetření nebo léčbu, například u zánětlivého akné, doporučíme vám další postup."
+            }
+          ]
+        },
+        {
+          "label": "Jak probíhá konzultace",
+          "content": [
+            {
+              "steps": [
+                "Anamnéza a vaše cíle (alergie, léky, těhotenství a kojení, dosavadní péče)",
+                "Analýza pleti",
+                "Rozbor vaší domácí péče",
+                "Návrh rutiny a doporučení ošetření",
+                "Kontinuální sledování výsledků a úprava péče"
+              ]
+            },
+            {
+              "text": "Přijďte prosím bez make-upu a vezměte s sebou produkty, které používáte, nebo jejich fotografie."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "polynukleotidy",
+      "title": "Polynukleotidy",
+      "priceCategory": "Polynukleotidy",
+      "explainer": "biostimulace",
+      "description": "Injekční ošetření purifikovanými polynukleotidy (PN), které podporuje regeneraci pleti, její hydrataci a pružnost. Pro unavenou, dehydratovanou pleť, jemné linky, oční okolí i jizvy po akné.",
+      "sections": [
+        {
+          "content": [
+            {
+              "text": "Polynukleotidy (PN) jsou dlouhé řetězce nukleotidů, získávané z DNA lososovitých ryb a vysoce čištěné tak, aby je lidská kůže dobře snášela. Nejde o výplň, která přidává objem. Jde o biostimulátor, který zlepšuje kvalitu pleti zevnitř."
+            },
+            {
+              "text": "Po aplikaci do kůže podporují polynukleotidy činnost fibroblastů, tedy buněk, které tvoří kolagen, elastin a kyselinu hyaluronovou. Zároveň váží vodu, a pleť je proto lépe hydratovaná a pružnější."
+            }
+          ]
+        },
+        {
+          "label": "K čemu je ošetření vhodné",
+          "content": [
+            {
+              "bullets": [
+                "dehydratovaná, unavená pleť bez jasu",
+                "jemné linky a kvalita pleti v oční oblasti",
+                "snížená pružnost a ztenčená pleť (krk, dekolt, hřbety rukou)",
+                "citlivá pleť s porušenou bariérou, která potřebuje regeneraci",
+                "příprava pleti před dalšími ošetřeními nebo její podpora po nich"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Jak probíhá ošetření",
+          "content": [
+            {
+              "steps": [
+                "Konzultace a posouzení pleti",
+                "Očištění a znecitlivující krém (cca 20–30 minut)",
+                "Aplikace tenkou jehlou do kůže (cca 20–30 minut)",
+                "Chladivá péče a pokyny po ošetření, návrat k běžnému režimu",
+                "Další aplikace za 3–4 týdny, kontrola efektu po dokončení série"
+              ]
+            },
+            {
+              "text": "Doporučujeme 2–3 ošetření v odstupu 3–4 týdnů, poté udržovací ošetření 1–2× ročně. Počet ošetření stanovuje lékař podle stavu pleti. Ošetření může být nepříjemné, proto před aplikací používáme znecitlivující krém."
+            }
+          ]
+        },
+        {
+          "use": "pnAftercare"
+        },
+        {
+          "use": "pnContraindications"
+        }
+      ]
+    },
+    {
+      "slug": "rejuran",
+      "title": "Rejuran – lososí sperma",
+      "priceCategory": "Rejuran",
+      "explainer": "biostimulace",
+      "description": "Prémiový polynukleotidový přípravek z Jižní Koreje pro regeneraci pleti, jemné linky a nerovnosti po akné. Řada Healer, I a S je určena pro obličej, oční okolí i jizvy.",
+      "sections": [
+        {
+          "content": [
+            {
+              "text": "Rejuran je značka injekčních polynukleotidů (PN) od jihokorejského výrobce PharmaResearch. Obsahuje vysoce čištěné polynukleotidy z DNA lososovitých ryb a patří mezi nejdéle používané přípravky tohoto typu. Působí stejně jako ostatní polynukleotidy: podporuje činnost fibroblastů, tedy tvorbu kolagenu, elastinu a kyseliny hyaluronové, a zlepšuje hydrataci i strukturu pleti. Nepřidává objem a nemění rysy obličeje."
+            }
+          ]
+        },
+        {
+          "label": "Podle oblasti a cíle volíme jednu ze tří variant",
+          "content": [
+            {
+              "variants": [
+                {
+                  "title": "Rejuran Healer",
+                  "text": "Obličej, krk, dekolt, ruce: kvalita pleti, hydratace, pružnost, jemné linky."
+                },
+                {
+                  "title": "Rejuran I",
+                  "text": "Oční okolí a další tenká kůže: kruhy a jemné linky pod očima, hydratace tenké kůže."
+                },
+                {
+                  "title": "Rejuran S",
+                  "text": "Jizvy, nerovná textura: jizvy po akné, nerovnosti pleti, hlubší linky."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "K čemu je ošetření vhodné",
+          "content": [
+            {
+              "bullets": [
+                "dehydratovaná, unavená pleť bez jasu",
+                "jemné linky, zejména v oční oblasti",
+                "jizvy po akné a nerovná textura pleti",
+                "ztenčená pleť s nižší pružností (krk, dekolt, hřbety rukou)"
+              ]
+            },
+            {
+              "text": "Klinická data jsou povzbudivá, ale méně rozsáhlá než u dlouho zavedených metod. Výsledky proto nikdy neslibujeme a po sérii ošetření je společně vyhodnotíme."
+            }
+          ]
+        },
+        {
+          "label": "Jak probíhá ošetření",
+          "content": [
+            {
+              "steps": [
+                "Konzultace a volba varianty podle pleti",
+                "Očištění a znecitlivující krém (cca 20–30 minut)",
+                "Aplikace do kůže tenkou jehlou (cca 30 minut)",
+                "Chladivá péče a pokyny po ošetření",
+                "Další aplikace za 3–4 týdny (u jizev za 4–6 týdnů), kontrola efektu po sérii"
+              ]
+            },
+            {
+              "text": "Doporučujeme sérii 3 ošetření, poté udržovací aplikaci 1–2× ročně. Počet ošetření stanovuje lékař podle stavu pleti. Ošetření může být nepříjemné, zejména u varianty Healer, proto před aplikací používáme znecitlivující krém."
+            }
+          ]
+        },
+        {
+          "use": "pnAftercare"
+        },
+        {
+          "use": "pnContraindications"
+        }
+      ]
+    },
+    {
+      "slug": "profhilo-bioremodelace",
+      "title": "Kyselina hyaluronová (bioremodelace)",
+      "priceCategory": "Kyselina hyaluronová – bioremodelace",
+      "explainer": "biostimulace",
+      "description": "Injekční ošetření kyselinou hyaluronovou ve vysoké koncentraci, které hluboce hydratuje pleť a zlepšuje její kvalitu. Stimuluje tvorbu kolagenu a elastinu, zpevňuje pokožku a vyhlazuje jemné vrásky.",
+      "sections": [
+        {
+          "content": [
+            {
+              "text": "Kyselina hyaluronová je látka, kterou si kůže vyrábí sama a která váže velké množství vody. V bioremodelaci ji používáme ve vysoké koncentraci a ve stabilizované formě. Po aplikaci se šíří v tkáni, hydratuje ji zevnitř a podporuje tvorbu kolagenu a elastinu. Na rozdíl od výplní nepřidává objem v konkrétním místě a nemění tvar obličeje."
+            },
+            {
+              "text": "Ošetření je vhodné pro pleť, která ztrácí pružnost a hydrataci, má jemné linky nebo je unavená. Používáme přípravky Profhilo® (bioremodelace) a Profhilo® Structura (obnova tkání)."
+            }
+          ]
+        },
+        {
+          "label": "Rozdíl mezi Profhilo® a Profhilo® Structura",
+          "content": [
+            {
+              "variants": [
+                {
+                  "title": "Profhilo®",
+                  "text": "Bioremodelační ošetření zaměřené na hydrataci a zlepšení kvality kůže. Stimuluje tvorbu kolagenu a elastinu, zvyšuje pružnost bez objemového efektu."
+                },
+                {
+                  "title": "Profhilo® Structura",
+                  "text": "Určeno k obnově hlubších tukových struktur. Zpevňuje kontury, zpomaluje projevy poklesu tkání bez nepřirozeného zvětšení objemu."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Oblasti aplikace",
+          "content": [
+            {
+              "areas": [
+                "Obličej a krk – brada, tváře, krk a dekolt",
+                "Jizvy a strie – akné, chirurgické zákroky, Císařský řez",
+                "Labia – omlazení a vyhlazení struktury"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Jak probíhá ošetření",
+          "content": [
+            {
+              "steps": [
+                "Konzultace a plán ošetření",
+                "Dezinfekce a značení bodů aplikace",
+                "Aplikace (10–20 minut)",
+                "Návrat k běžnému režimu, drobné vyvýšeniny v místě vpichů se obvykle vstřebají do 1–2 dnů",
+                "Kontrola efektu za 4 týdny, podle potřeby druhá aplikace"
+              ]
+            },
+            {
+              "text": "Obvykle se provádějí 2 ošetření v odstupu přibližně 4 týdnů. Počet ošetření stanovuje lékař podle stavu pleti. Doporučujeme ošetření opakovat po 1. měsíci a dále pak co půl roku."
+            }
+          ]
+        },
+        {
+          "use": "haContraindications"
+        }
+      ]
+    },
+    {
+      "slug": "skin-booster",
+      "title": "Kyselina hyaluronová s glycerolem (skin booster)",
+      "priceCategory": "Kyselina hyaluronová – skin booster",
+      "explainer": "biostimulace",
+      "description": "Jemné injekční ošetření nesíťovanou kyselinou hyaluronovou s glycerolem, které intenzivně hydratuje pleť, zlepšuje její pružnost a vyhlazuje jemné linky. Vhodné i pro citlivé oblasti kolem očí a úst.",
+      "sections": [
+        {
+          "content": [
+            {
+              "text": "Skin booster je přípravek s nesíťovanou kyselinou hyaluronovou. Na rozdíl od výplní nemá za úkol vracet objem, ale zlepšovat kvalitu pleti. Používáme přípravek Croma Revitalis, který obsahuje 1,8 % kyseliny hyaluronové a 2,12 % glycerolu. Kyselina hyaluronová váže vodu a glycerol hydrataci pleti dále podporuje."
+            },
+            {
+              "text": "Přípravek se aplikuje do povrchové vrstvy kůže. Nemění rysy obličeje, zlepšuje hydrataci, tón a pružnost pleti a zjemňuje jemné linky, například kolem očí a úst. Podle výrobce efekt vydrží u vrásek kolem očí až 4 měsíce a u vrásek kolem úst až 6 měsíců. Oproti bioremodelaci jde o lehčí ošetření povrchu pleti, které míří hlavně na hydrataci a jemné linky v citlivých oblastech."
+            }
+          ]
+        },
+        {
+          "label": "K čemu je ošetření vhodné",
+          "content": [
+            {
+              "bullets": [
+                "suchá, dehydratovaná a unavená pleť",
+                "jemné linky kolem očí",
+                "jemné linky kolem úst",
+                "snížená pružnost a nevyrovnaný tón pleti"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Jak probíhá ošetření",
+          "content": [
+            {
+              "steps": [
+                "Konzultace a posouzení pleti",
+                "Znecitlivující krém (cca 20 minut)",
+                "Aplikace do povrchové vrstvy kůže (cca 15–20 minut)",
+                "Chladivá péče a pokyny po ošetření"
+              ]
+            },
+            {
+              "text": "Obvykle doporučujeme sérii 2–3 ošetření v odstupu 3–4 týdnů, poté udržovací ošetření podle stavu pleti. Počet ošetření stanovuje lékař."
+            }
+          ]
+        },
+        {
+          "use": "haContraindications"
+        }
+      ]
+    },
+    {
+      "slug": "vyplne-rtu",
+      "title": "Výplň rtů",
+      "priceCategory": "Výplně kyselinou hyaluronovou",
+      "priceLabel": ["Výplň rtů", "Bloková anestezie"],
+      "explainer": "vyplne",
+      "description": "Jemné zvětšení, kontura a hydratace rtů kyselinou hyaluronovou. Přirozený tvar, který odpovídá vašemu obličeji a mimice.",
+      "sections": [
+        {
+          "content": [
+            {
+              "text": "Ošetření rtů kyselinou hyaluronovou doplňuje ztracený objem, zdůrazňuje kontury a vyrovnává asymetrii. Používáme jen tolik materiálu, kolik je potřeba, obvykle 0,5–1 ml. Cílem je přirozený tvar, ne efekt přeplněných rtů."
+            }
+          ]
+        },
+        {
+          "label": "K čemu je ošetření vhodné",
+          "content": [
+            {
+              "bullets": [
+                "ztráta objemu, tenké nebo suché rty",
+                "nevýrazná kontura rtů",
+                "asymetrie horního a dolního rtu",
+                "jemné vertikální linky kolem rtů"
+              ]
+            }
+          ]
+        },
+        {
+          "use": "fillerSteps"
+        },
+        {
+          "use": "fillerAftercare"
+        },
+        {
+          "use": "fillerContraindications"
+        }
+      ]
+    },
+    {
+      "slug": "nosoretni-ryhy",
+      "title": "Výplň nosoretních rýh a jiných hlubokých vrásek",
+      "priceCategory": "Výplně kyselinou hyaluronovou",
+      "priceLabel": ["Nosoretní rýhy a jiné hluboké vrásky", "Bloková anestezie"],
+      "explainer": "vyplne",
+      "description": "Zjemnění až vyhlazení rýh mezi nosem a koutky úst, nebo jiných hlubokých vrásek kyselinou hyaluronovou.",
+      "sections": [
+        {
+          "content": [
+            {
+              "text": "Nosoretní rýhy se s věkem prohlubují, protože ubývá objem a pružnost tkání ve střední části obličeje. Výplň rýhu vyhladí a podepře okolní tkáň. Při konzultaci lékař posoudí, zda stačí ošetření přímo v rýze, nebo je vhodné doplnit objem i v okolí, například v oblasti tváří. Obě rýhy obvykle ošetříme dohromady do 1 ml."
+            }
+          ]
+        },
+        {
+          "use": "fillerSteps"
+        },
+        {
+          "use": "fillerAftercare"
+        },
+        {
+          "use": "fillerContraindications"
+        }
+      ]
+    },
+    {
+      "slug": "vip-friend-beauty-session",
+      "title": "VIP Friend Beauty Session",
+      "priceCategory": "Balíčky a zážitky",
+      "description": "Soukromý termín na naší klinice pro 3–5 kamarádek. Skincare konzultace, ošetření dle vašeho výběru a občerstvení v klidné atmosféře. Cca 3 hodiny jen pro vaši skupinu.",
+      "sections": [
+        {
+          "content": [
+            {
+              "text": "Strávte odpoledne s kamarádkami v péči lékařky. Klinika je po celou dobu jen pro vaši skupinu, bez dalších klientů, v klidu a soukromí."
+            }
+          ]
+        },
+        {
+          "label": "Co session zahrnuje",
+          "content": [
+            {
+              "bullets": [
+                "soukromý termín na klinice pro 3–5 osob, délka cca 3 hodiny podle počtu osob",
+                "skincare konzultaci pro každou z vás",
+                "ošetření dle vašeho výběru z naší nabídky pro každou z vás",
+                "lehké občerstvení a nápoje po celou dobu"
+              ]
+            },
+            {
+              "text": "Ošetření stanovuje lékařka po konzultaci. Pokud by vámi zvolené ošetření nebylo vhodné, například z důvodu těhotenství, navrhneme alternativu. Rozsah ošetření domluvíme předem tak, aby se vše pohodlně stihlo v čase vyhrazeném pro vaši skupinu."
+            }
+          ]
+        },
+        {
+          "label": "Jak session probíhá",
+          "content": [
+            {
+              "steps": [
+                "Rezervace termínu pro celou skupinu a výběr ošetření předem",
+                "Příchod, přivítání a občerstvení",
+                "Skincare konzultace pro každou z vás",
+                "Ošetření",
+                "Doporučení domácí péče a případná další ošetření"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Cena",
+          "content": [
+            {
+              "text": "**500 Kč za osobu** a k tomu cena vybraných ošetření podle ceníku."
+            },
+            {
+              "text": "Příklad: čtyři kamarádky zaplatí za session 2 000 Kč a každá z nich navíc cenu svého ošetření."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "shared": {
+    "pnAftercare": {
+      "label": "Po ošetření",
+      "content": [
+        {
+          "text": "V místě vpichů se mohou na 1–3 dny objevit drobné pupínky (papule), zarudnutí nebo otok a občas modřinka. Prvních 24 hodin doporučujeme nesportovat, nechodit do sauny a nepoužívat make-up. Důležitá je dobrá hydratace a každodenní ochrana pleti SPF."
+        }
+      ]
+    },
+    "pnContraindications": {
+      "label": "Kdy ošetření není vhodné",
+      "content": [
+        {
+          "bullets": [
+            "těhotenství a kojení",
+            "alergie na rybí bílkoviny nebo na složky přípravku",
+            "aktivní infekce, herpes nebo zánět v místě aplikace",
+            "aktivní autoimunitní onemocnění a sklon k tvorbě keloidů (po konzultaci s lékařem)",
+            "léčba léky na ředění krve (po konzultaci s lékařem)"
+          ]
+        }
+      ]
+    },
+    "haContraindications": {
+      "label": "Kdy ošetření není vhodné",
+      "content": [
+        {
+          "bullets": [
+            "těhotenství a kojení",
+            "alergie na složky přípravku",
+            "aktivní infekce nebo zánět v místě aplikace",
+            "aktivní autoimunitní onemocnění (po konzultaci s lékařem)",
+            "léčba léky na ředění krve (po konzultaci s lékařem)"
+          ]
+        }
+      ]
+    },
+    "fillerSteps": {
+      "label": "Jak probíhá ošetření",
+      "content": [
+        {
+          "steps": [
+            "Konzultace a domluva cíle ošetření",
+            "Znecitlivující krém (cca 15–20 minut)",
+            "Aplikace jemnou jehlou nebo kanylou (cca 20–30 minut)",
+            "Jemná masáž a kontrola výsledku",
+            "Kontrola za 2–4 týdny, případně dokorigování"
+          ]
+        }
+      ]
+    },
+    "fillerAftercare": {
+      "label": "Po ošetření",
+      "content": [
+        {
+          "text": "Otok a mírné zarudnutí jsou běžné a nejvýraznější bývají druhý den. Drobné modřiny mizí během několika dní. Konečný výsledek je vidět zhruba za týden. V den ošetření oblast nezatěžujte, nesportujte intenzivně a vyhněte se horkým nápojům. Důležité akce plánujte nejméně týden po ošetření."
+        }
+      ]
+    },
+    "fillerContraindications": {
+      "label": "Kdy ošetření není vhodné",
+      "content": [
+        {
+          "bullets": [
+            "těhotenství a kojení",
+            "alergie na složky přípravku nebo na lokální anestetikum",
+            "aktivní infekce, herpes nebo zánět v místě aplikace (při opakovaných opryscích na rtech informujte lékaře předem)",
+            "aktivní autoimunitní onemocnění (po konzultaci s lékařem)",
+            "léčba léky na ředění krve nebo plánované zubní ošetření v nejbližších dvou týdnech (po konzultaci s lékařem)"
+          ]
+        }
+      ]
+    }
+  },
+  "explainers": {
+    "biostimulace": {
+      "label": "Co jsou biostimulační látky?",
+      "content": [
+        {
+          "text": "Biostimulační látky zlepšují kvalitu pleti zevnitř: podporují tvorbu kolagenu a elastinu a zlepšují hydrataci. Nepřidávají objem a nemění rysy obličeje. Nabízíme dvě látky, které se liší účinkem a hodí se pro různé potřeby pleti."
+        },
+        {
+          "lines": [
+            "**Polynukleotidy (PN):** regenerace buněk pleti, kvalita a struktura pleti, oční okolí, jizvy po akné",
+            "**Kyselina hyaluronová** (bioremodelace a skin booster s glycerolem): hluboká hydratace, pružnost a zpevnění pleti, jemné linky"
+          ]
+        },
+        {
+          "text": "Obě látky se dají kombinovat. Pořadí a rozestupy stanoví lékař při konzultaci."
+        }
+      ]
+    },
+    "vyplne": {
+      "label": "Co jsou výplně kyselinou hyaluronovou?",
+      "content": [
+        {
+          "text": "Výplně vracejí objem a upravují tvar. Používáme zasíťovanou kyselinu hyaluronovou. Výsledek je viditelný ihned a drží obvykle 6–12 měsíců, u některých přípravků a oblastí až 18 měsíců."
+        }
+      ]
+    }
+  }
+}

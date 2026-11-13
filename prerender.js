@@ -6,7 +6,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const routes = ['/', '/o-nas'];
 
 async function prerender() {
   // 1. Build client bundle
@@ -25,8 +24,35 @@ async function prerender() {
   });
 
   // 3. Render each route and write HTML
-  const { render } = await import(path.resolve(__dirname, 'dist-ssr/entry-server.js'));
-  const template = fs.readFileSync(path.resolve(__dirname, 'build/index.html'), 'utf-8');
+  const { render, routes } = await import(path.resolve(__dirname, 'dist-ssr/entry-server.js'));
+  let template = fs.readFileSync(path.resolve(__dirname, 'build/index.html'), 'utf-8');
+
+  // Inline the compiled stylesheet so the first paint doesn't wait on an
+  // extra render-blocking request for a file that's only a few KB anyway.
+  // Scoped to /assets/ so this can't accidentally grab the fonts.css
+  // noscript fallback link, which must stay external and async-loaded.
+  const stylesheetMatch = template.match(/<link rel="stylesheet"[^>]*href="(\/assets\/[^"]+\.css)"[^>]*>/);
+  if (stylesheetMatch) {
+    const cssPath = path.resolve(__dirname, 'build', stylesheetMatch[1].replace(/^\//, ''));
+    const css = fs.readFileSync(cssPath, 'utf-8');
+    template = template.replace(stylesheetMatch[0], `<style>${css}</style>`);
+  }
+
+  // The static template's <head> carries the homepage's own description,
+  // canonical, OpenGraph and Twitter tags. For every other route those must
+  // be swapped out for react-helmet-async's per-route versions rather than
+  // appended, otherwise the page ends up with two conflicting canonicals /
+  // descriptions (and Google picks whichever confuses it least).
+  const stripHeadTags = (html, needles) =>
+    html.replace(/<(meta|link)\b[^]*?\/>/g, (tag) => (needles.some((needle) => tag.includes(needle)) ? '' : tag));
+  const routeSpecificTagNeedles = [
+    'name="description"',
+    'name="robots"',
+    'rel="canonical"',
+    'property="og:',
+    'name="twitter:',
+    'name="keywords"',
+  ];
 
   for (const route of routes) {
     const { html, helmet } = render(route);
@@ -37,8 +63,13 @@ async function prerender() {
       if (helmet.title?.toString()) {
         page = page.replace(/<title>[^<]*<\/title>/, helmet.title.toString());
       }
-      if (helmet.meta?.toString()) {
-        page = page.replace('</head>', `${helmet.meta.toString()}</head>`);
+      page = stripHeadTags(page, routeSpecificTagNeedles);
+      const headInjections = [helmet.meta, helmet.link, helmet.script]
+        .map((tag) => tag?.toString())
+        .filter(Boolean)
+        .join('');
+      if (headInjections) {
+        page = page.replace('</head>', `${headInjections}</head>`);
       }
     }
 
