@@ -1,7 +1,8 @@
 # BeautySen
 
-Website pro estetickou medicínu kliniky [beautysen.cz](https://www.beautysen.cz/) ve Frýdku-Místku. Prezentuje procedury
-botulotoxinu a kyseliny hyaluronové od MUDr. Elišky Kotek, MBA.
+Website pro estetickou medicínu kliniky [beautysen.cz](https://www.beautysen.cz/) ve Frýdku-Místku. Prezentuje botulotoxin,
+biostimulaci pleti, výplně kyselinou hyaluronovou a skincare poradenství od MUDr. Elišky Kotek, MBA a MUDr. Terézie
+Sobotkové.
 
 ## Tech Stack
 
@@ -18,10 +19,13 @@ src/
 │   ├── Hero.jsx        # Hero sekce s CTA
 │   ├── Home.jsx        # Hlavní stránka
 │   ├── Layout.jsx      # Navigace a patička
-│   ├── Services.jsx    # Přehled služeb s modálními okny
-│   ├── About.jsx       # O nás / bio doktorky
-│   ├── Procedure.jsx   # Kroky procedury
+│   ├── Services.jsx    # Přehled služeb na hlavní stránce
+│   ├── ServicePage.jsx # Stránka služby /sluzby/<slug>/
+│   ├── serviceContent.jsx # Vykreslení služeb z content/services.json
+│   ├── About.jsx       # O nás / bio lékařek
 │   └── Pricelist.jsx   # Ceník
+├── content/
+│   └── services.json   # Texty služeb, pořadí v menu (návod v klíči "_help")
 ├── App.jsx             # Router
 ├── main.jsx            # Vstupní bod
 └── index.css           # Tailwind + vlastní animace

@@ -6,7 +6,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const routes = ['/', '/o-nas'];
 
 async function prerender() {
   // 1. Build client bundle
@@ -25,7 +24,7 @@ async function prerender() {
   });
 
   // 3. Render each route and write HTML
-  const { render } = await import(path.resolve(__dirname, 'dist-ssr/entry-server.js'));
+  const { render, routes } = await import(path.resolve(__dirname, 'dist-ssr/entry-server.js'));
   let template = fs.readFileSync(path.resolve(__dirname, 'build/index.html'), 'utf-8');
 
   // Inline the compiled stylesheet so the first paint doesn't wait on an

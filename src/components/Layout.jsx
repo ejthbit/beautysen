@@ -123,6 +123,14 @@ function TopBar() {
           >
             Domů
           </NavLink>
+          <HashLink
+            smooth
+            to="/#sluzby"
+            elementId="sluzby"
+            className="text-gray-700 hover:text-[#7a5e53] text-xl"
+          >
+            Služby
+          </HashLink>
           <NavLink
             onClick={() => window.scrollTo(0, 0)}
             to="/o-nas"
@@ -179,6 +187,15 @@ function TopBar() {
           >
             Domů
           </NavLink>
+          <HashLink
+            onClick={() => setOpen(false)}
+            smooth
+            to="/#sluzby"
+            elementId="sluzby"
+            className="block"
+          >
+            Služby
+          </HashLink>
           <NavLink
             onClick={() => setOpen(false)}
             to="/o-nas"
@@ -215,6 +232,52 @@ export function Layout({ children }) {
     <div className="relative">
       <TopBar />
       <main>{children}</main>
+      <a
+        href="https://beautysen.cz/rezervace"
+        aria-label="Objednat konzultaci"
+        title="Objednat konzultaci"
+        className="fixed bottom-5 right-5 md:bottom-8 md:right-8 z-40 w-14 h-14 rounded-full bg-[#8d6e63] text-white shadow-lg flex items-center justify-center hover:bg-[#7a5e56] hover:scale-105 transition duration-200"
+      >
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect
+            x="3"
+            y="4"
+            width="18"
+            height="18"
+            rx="2"
+          />
+          <line
+            x1="16"
+            y1="2"
+            x2="16"
+            y2="6"
+          />
+          <line
+            x1="8"
+            y1="2"
+            x2="8"
+            y2="6"
+          />
+          <line
+            x1="3"
+            y1="10"
+            x2="21"
+            y2="10"
+          />
+        </svg>
+      </a>
     </div>
   );
 }

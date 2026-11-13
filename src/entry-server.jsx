@@ -6,6 +6,11 @@ import { Routes, Route } from 'react-router-dom';
 import { Home } from './components/Home';
 import { About } from './components/About';
 import { Layout, NotFound } from './components/Layout';
+import { ServicePage } from './components/ServicePage';
+import { servicePath, services } from './components/serviceContent';
+
+// Prerendered by prerender.js; every treatment page gets its own static HTML.
+export const routes = ['/', '/o-nas', ...services.map(servicePath)];
 
 export function render(url) {
   const helmetContext = {};
@@ -20,6 +25,7 @@ export function render(url) {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/o-nas" element={<About />} />
+              <Route path="/sluzby/:slug" element={<ServicePage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

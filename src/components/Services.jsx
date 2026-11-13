@@ -1,212 +1,76 @@
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { serviceMenu, servicePath } from './serviceContent';
 
-export const Services = () => {
-  const [modalContent, setModalContent] = useState(null);
-
-  const services = [
-    {
-      title: 'Botulotoxin',
-      subtitle: 'Vyhlazení vrásek',
-      description: 'Osvědčená a bezpečná metoda k vyhlazení mimických vrásek a uvolnění nadměrné svalové aktivity.',
-      details: (
-        <div className="space-y-5">
-          <p className="text-[#5a5350] leading-relaxed">
-            Působí tak, že dočasně uvolní sval, který vrásku vytváří. Výsledkem je odpočatý a svěží vzhled.
-          </p>
-          <ul className="space-y-2">
-            {[
-              'Rychlé ošetření',
-              'Minimální diskomfort',
-              'Bez rekonvalescence',
-              'Přirozený efekt',
-              'Účinek 3–6 měsíců',
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-center gap-3 text-xl text-[#5a5350]"
-              >
-                <span className="w-1 h-1 rounded-full bg-[#8d6e63] flex-shrink-0" />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="text-xs text-[#6b6260] italic border-l-2 border-[#8d6e63]/30 pl-4">
-            Ošetření není vhodné během těhotenství a kojení. Vše je vždy individuálně posouzeno při konzultaci.
-          </p>
-          <div className="border-t border-[#e8e0d8] pt-5">
-            <p className="section-label text-[#7a5e53] mb-4">Oblasti aplikace</p>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <p className="text-xl font-medium text-[#2a2320] mb-2">Horní část obličeje</p>
-                <ul className="space-y-1">
-                  {['Čelo a mračivka', 'Vrásky kolem očí (vějířky)', 'Brow lift', 'Nadměrné pocení'].map((area) => (
-                    <li
-                      key={area}
-                      className="text-xl text-[#6b6260] flex items-center gap-2"
-                    >
-                      <span className="w-1 h-px bg-[#8d6e63]/50" />
-                      {area}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="text-xl font-medium text-[#2a2320] mb-2">Spodní část obličeje</p>
-                <ul className="space-y-1">
-                  {[
-                    'Gummy smile & Marionette lines',
-                    'Nefertiti neck lift',
-                    'Masseter (skřípání zubů)',
-                    'Platysma (krk)',
-                  ].map((area) => (
-                    <li
-                      key={area}
-                      className="text-xl text-[#6b6260] flex items-center gap-2"
-                    >
-                      <span className="w-1 h-px bg-[#8d6e63]/50" />
-                      {area}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: 'Profhilo®',
-      subtitle: 'Kyselina hyaluronová',
-      description:
-        'Je injekční ošetření s vysokou koncentrací kyseliny hyaluronové, které slouží k hloubkové hydrataci a zlepšení kvality pleti. Stimuluje tvorbu kolagenu a elastinu, čímž pomáhá zpevnit pokožku a redukovat jemné vrásky.',
-      details: (
-        <div className="space-y-5">
-          <p className="text-[#5a5350] leading-relaxed">
-            Používáme prémiové materiály Profhilo® pro hloubkovou hydrataci a harmonizaci rysů.
-          </p>
-          <div className="border-t border-[#e8e0d8] pt-5 space-y-4">
-            <p className="section-label text-[#7a5e53]">Rozdíl mezi Profhilo® a Profhilo Structura®</p>
-            <div className="space-y-3">
-              <div className="border-l-2 border-[#8d6e63]/30 pl-4">
-                <p className="text-xl font-medium text-[#2a2320] mb-1">Profhilo®</p>
-                <p className="text-xl text-[#6b6260] leading-relaxed">
-                  Bioremodelační ošetření zaměřené na hydrataci a zlepšení kvality kůže. Stimuluje tvorbu kolagenu a
-                  elastinu, zvyšuje pružnost bez objemového efektu.
-                </p>
-              </div>
-              <div className="border-l-2 border-[#8d6e63]/30 pl-4">
-                <p className="text-xl font-medium text-[#2a2320] mb-1">Profhilo® Structura</p>
-                <p className="text-xl text-[#6b6260] leading-relaxed">
-                  Určeno k obnově hlubších tukových struktur. Zpevňuje kontury, zpomaluje projevy poklesu tkání bez
-                  nepřirozeného zvětšení objemu.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-[#e8e0d8] pt-5">
-            <p className="section-label text-[#7a5e53] mb-4">Oblasti aplikace</p>
-            <ul className="space-y-1">
-              {[
-                'Obličej a krk – brada, tváře, krk a dekolt',
-                'Jizvy a strie – akné, chirurgické zákroky, Císařský řez',
-                'Labia – omlazení a vyhlazení struktury',
-              ].map((area) => (
-                <li
-                  key={area}
-                  className="text-xl text-[#6b6260] flex items-center gap-2"
-                >
-                  <span className="w-1 h-px bg-[#8d6e63]/50" />
-                  {area}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      ),
-    },
-  ];
-
+// Named Tailwind group (row) scopes each row's hover animation to that row only.
+const ServiceRow = ({ service, nested = false }) => {
+  const Heading = nested ? 'h4' : 'h3';
   return (
-    <section
-      id="sluzby"
-      className="bg-[#f7f5f2]"
+    <Link
+      to={servicePath(service)}
+      onClick={() => window.scrollTo(0, 0)}
+      className={`group/row relative flex items-center justify-between gap-6 focus-visible:outline-none ${nested ? 'py-5 border-t border-[#e8e0d8]' : 'py-6 md:py-8 border-b border-[#d4c5bb]'}`}
     >
-      {/* Section header */}
-      <div className="max-w-6xl mx-auto px-6 md:px-12 pt-20 md:pt-28 pb-14 md:pb-20">
-        <h2 className="text-5xl md:text-6xl font-light text-[#2a2320]">Služby</h2>
-      </div>
-
-      {/* Service grid */}
-      <div className="border-b border-[#d4c5bb]">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className={`px-6 md:px-12 py-12 md:py-16 relative flex flex-col ${index === 0 ? 'border-b md:border-b-0' : ''} border-[#d4c5bb]`}
-            >
-              {index === 0 && <span className="hidden md:block absolute right-0 top-1/4 h-1/2 w-px bg-[#d4c5bb]" />}
-              <div className="flex flex-col h-full space-y-5">
-                <span className="section-label text-[#7a5e53]">{service.subtitle}</span>
-                <h3 className="text-3xl md:text-4xl font-light text-[#2a2320] tracking-wide">{service.title}</h3>
-                <p className="text-[#6b6260] text-base leading-relaxed pt-1">{service.description}</p>
-                <button
-                  onClick={() => setModalContent(service)}
-                  className="inline-flex items-center gap-3 section-label text-[#7a5e53] hover:gap-5 transition-all duration-300 mt-auto pt-4"
-                >
-                  <span>Zjistit více</span>
-                  <span className="text-base leading-none">→</span>
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Modal */}
-      {modalContent && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-title"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#2a2320]/70 backdrop-blur-sm"
-          onClick={(e) => e.target === e.currentTarget && setModalContent(null)}
-          onKeyDown={(e) => e.key === 'Escape' && setModalContent(null)}
+      {/* Accent line draws in along the bottom on hover/focus */}
+      <span
+        aria-hidden="true"
+        className="absolute left-0 -bottom-px h-px w-full bg-[#8d6e63] origin-left scale-x-0 transition-transform duration-500 ease-out group-hover/row:scale-x-100 group-focus-visible/row:scale-x-100"
+      />
+      <div className="transition-transform duration-300 ease-out motion-safe:group-hover/row:translate-x-2 motion-safe:group-focus-visible/row:translate-x-2">
+        <Heading
+          className={`${nested ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'} font-light text-[#2a2320] group-hover/row:text-[#7a5e53] group-focus-visible/row:text-[#7a5e53] transition-colors duration-300`}
         >
-          <div className="bg-[#f7f5f2] max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-            {/* Modal accent bar */}
-            <div className="h-0.5 bg-[#8d6e63]" />
-            <div className="p-8 md:p-10">
-              <div className="flex justify-between items-start mb-8">
-                <div>
-                  <p className="section-label text-[#7a5e53] mb-2">{modalContent.subtitle}</p>
-                  <h3
-                    id="modal-title"
-                    className="text-3xl font-light text-[#2a2320]"
-                  >
-                    {modalContent.title}
-                  </h3>
-                </div>
-                <button
-                  onClick={() => setModalContent(null)}
-                  aria-label="Zavřít"
-                  className="text-[#6b6260] hover:text-[#2a2320] transition-colors text-2xl leading-none mt-1 ml-4"
-                >
-                  ×
-                </button>
-              </div>
-
-              <div className="text-[#2a2320]">{modalContent.details}</div>
-
-              <button
-                onClick={() => setModalContent(null)}
-                className="mt-10 w-full py-3 border border-[#d4c5bb] text-[#6b6260] text-xl tracking-wider hover:border-[#8d6e63] hover:text-[#7a5e53] transition-colors duration-200"
-              >
-                Zavřít
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </section>
+          {service.title}
+        </Heading>
+        <p className="text-[#6b6260] text-base leading-relaxed mt-2 max-w-2xl">{service.description}</p>
+      </div>
+      <span
+        aria-hidden="true"
+        className="flex-shrink-0 text-2xl leading-none text-[#7a5e53] transition-transform duration-300 ease-out motion-safe:group-hover/row:translate-x-1 motion-safe:group-focus-visible/row:translate-x-1"
+      >
+        →
+      </span>
+    </Link>
   );
 };
+
+const ServiceGroup = ({ item }) => (
+  <div className="border-b border-[#d4c5bb] pt-6 md:pt-8 pb-2">
+    <h3 className="text-2xl md:text-3xl font-light text-[#2a2320]">{item.group}</h3>
+    <div className="mt-4">
+      <div className="space-y-4 max-w-2xl pb-6">{item.description}</div>
+      <ul>
+        {item.services.map((service) => (
+          <li key={service.slug}>
+            <ServiceRow
+              service={service}
+              nested
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+);
+
+export const Services = () => (
+  <section
+    id="sluzby"
+    className="bg-[#f7f5f2]"
+  >
+    {/* Section header */}
+    <div className="max-w-6xl mx-auto px-6 md:px-12 pt-20 md:pt-28 pb-14 md:pb-20">
+      <h2 className="text-5xl md:text-6xl font-light text-[#2a2320]">Služby</h2>
+    </div>
+
+    <div className="max-w-6xl mx-auto px-6 md:px-12 pb-20 md:pb-28">
+      {/* Right margin keeps the arrows clear of the fixed desktop nav until xl */}
+      <ul className="max-w-4xl md:mr-24 xl:mr-0 border-t border-[#d4c5bb]">
+        {serviceMenu.map((item) => (
+          <li key={item.slug ?? item.group}>
+            {item.services ? <ServiceGroup item={item} /> : <ServiceRow service={item} />}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+);

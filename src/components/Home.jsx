@@ -2,7 +2,6 @@ import { NavLink } from 'react-router-dom';
 import { Contact } from './Layout';
 import { Pricelist } from './Pricelist';
 import { Services } from './Services';
-import ProcedureStepper from './Procedure';
 import { Helmet } from 'react-helmet-async';
 import Hero from './Hero';
 
@@ -14,7 +13,7 @@ export function Home() {
 
         <meta
           name="description"
-          content="BeautySen – profesionální aplikace botulotoxinu a kyseliny hyaluronové ve Frýdku-Místku, snadno dostupné i pro klienty z Ostravy. Přirozené omlazení bez chirurgického zákroku. Lékařské ošetření MUDr. Eliška Kotek, MBA."
+          content="BeautySen – botulotoxin, biostimulace pleti polynukleotidy a kyselinou hyaluronovou, výplně rtů a skincare poradenství ve Frýdku-Místku, snadno dostupné i pro klienty z Ostravy."
         />
 
         <link
@@ -102,13 +101,6 @@ export function Home() {
 
         {/* ── Services ─────────────────────────────────────────── */}
         <Services />
-
-        {/* ── Procedure ─────────────────────────────────────────── */}
-        <section className="py-20 md:py-32 bg-[#2a2320]">
-          <div className="max-w-6xl mx-auto px-6 md:px-12">
-            <ProcedureStepper />
-          </div>
-        </section>
 
         {/* ── Pricelist ────────────────────────────────────────── */}
         <Pricelist />

@@ -8,11 +8,11 @@ export function About() {
         <title>O nás | BeautySen</title>
         <meta
           name="description"
-          content="Estetická medicína BeautySen ve Frýdku-Místku – bezpečí, důvěra a diskrétnost pro klienty z Frýdku-Místku i Ostravy. Ošetření provádí MUDr. Eliška Kotek, MBA."
+          content="Estetická medicína BeautySen ve Frýdku-Místku – bezpečí, důvěra a diskrétnost pro klienty z Frýdku-Místku i Ostravy. Ošetření provádí MUDr. Eliška Kotek, MBA a MUDr. Terézia Sobotková."
         />
         <link
           rel="canonical"
-          href="https://www.beautysen.cz/o-nas"
+          href="https://www.beautysen.cz/o-nas/"
         />
         <meta
           property="og:title"
@@ -24,7 +24,7 @@ export function About() {
         />
         <meta
           property="og:url"
-          content="https://www.beautysen.cz/o-nas"
+          content="https://www.beautysen.cz/o-nas/"
         />
         <meta
           property="og:type"
@@ -44,7 +44,7 @@ export function About() {
         />
         <meta
           name="twitter:description"
-          content="Bezpečí, důvěra a diskrétnost v estetické medicíně. Ošetření provádí MUDr. Eliška Kotek, MBA."
+          content="Bezpečí, důvěra a diskrétnost v estetické medicíně. Ošetření provádí MUDr. Eliška Kotek, MBA a MUDr. Terézia Sobotková."
         />
         <meta
           name="twitter:image"
@@ -62,12 +62,10 @@ export function About() {
         `}</script>
       </Helmet>
 
-      <div className="font-serif text-[#2a2320]">
+      <div className="bg-[#f7f5f2] font-serif text-[#2a2320]">
         {/* ── Page intro ────────────────────────────────────────── */}
-        <section className="min-h-[60vh] bg-[url(/img/bg.avif)] bg-cover bg-center flex items-end pt-32 pb-16 relative">
-          {/* Soft overlay so text is readable */}
-          <div className="absolute inset-0 bg-[#f7f5f2]/60" />
-          <div className="relative max-w-6xl mx-auto px-6 md:px-12 w-full">
+        <section className="pt-32 md:pt-52 pb-4 md:pb-8">
+          <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-8 h-px bg-[#8d6e63]" />
               <span className="section-label text-[#7a5e53]">Bezpečí, důvěra a diskrétnost</span>
@@ -81,7 +79,7 @@ export function About() {
         </section>
 
         {/* ── Doctor section ───────────────────────────────────── */}
-        <section className="py-20 md:py-32 bg-white">
+        <section className="pb-20 md:pb-32">
           <div className="max-w-6xl mx-auto px-6 md:px-12">
             <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
               {/* Photo */}
@@ -97,7 +95,7 @@ export function About() {
                     className="w-full aspect-[3/4] object-cover rounded-sm"
                     width="400"
                     height="533"
-                    loading="lazy"
+                    fetchPriority="high"
                   />
                 </picture>
                 {/* Decorative offset border */}
@@ -110,7 +108,7 @@ export function About() {
                   <div className="w-8 h-px bg-[#8d6e63]" />
                   <span className="section-label text-[#7a5e53]">Ošetřovat vás bude</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-light text-[#2a2320] mb-2">MUDr. Eliška Kotek, MBA</h2>
+                <h2 className="text-4xl md:text-5xl font-light text-[#2a2320] mb-8">MUDr. Eliška Kotek, MBA</h2>
                 <div className="space-y-5">
                   <p className="text-lg text-[#5a5350] leading-relaxed">
                     Medicínu vystudovala s cílem spojit odborné znalosti s citem pro detail, přirozenost a harmonii
@@ -121,20 +119,48 @@ export function About() {
                     ke každému klientovi.
                   </p>
                 </div>
+              </div>
+            </div>
 
-                {/* Trust marks */}
-                <div className="mt-10 space-y-3">
-                  {['Certifikovaný lékař', 'Ověřené preparáty', 'Individuální přístup', 'Bezpečí a diskrétnost'].map(
-                    (item) => (
-                      <div
-                        key={item}
-                        className="flex items-center gap-4"
-                      >
-                        <div className="w-px h-4 bg-[#8d6e63]" />
-                        <span className="text-xl text-[#6b6260]">{item}</span>
-                      </div>
-                    ),
-                  )}
+            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start mt-24 md:mt-32">
+              {/* Photo */}
+              <div className="relative md:order-2">
+                <picture>
+                  <source
+                    srcSet="/img/foto-sobotkova.avif"
+                    type="image/avif"
+                  />
+                  <img
+                    src="/img/foto-sobotkova.webp"
+                    alt="MUDr. Terézia Sobotková – lékařka estetické medicíny BeautySen"
+                    className="w-full aspect-[3/4] object-cover rounded-sm"
+                    width="400"
+                    height="533"
+                    loading="lazy"
+                  />
+                </picture>
+                {/* Decorative offset border */}
+                <div className="absolute -bottom-4 -left-4 w-2/3 h-2/3 border border-[#8d6e63]/20 rounded-sm -z-10 hidden md:block" />
+              </div>
+
+              {/* Bio text */}
+              <div className="md:pt-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-8 h-px bg-[#8d6e63]" />
+                  <span className="section-label text-[#7a5e53]">Ošetřovat vás bude</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-light text-[#2a2320] mb-8">MUDr. Terézia Sobotková</h2>
+                <div className="space-y-5">
+                  <p className="text-lg text-[#5a5350] leading-relaxed">
+                    Medicíně se věnuje s důrazem na zdraví pokožky, přirozenou krásu a harmonické výsledky. V estetické
+                    medicíně ji oslovuje možnost podpořit kvalitu pleti, její regeneraci a přirozený vzhled s respektem
+                    k individualitě každého klienta.
+                  </p>
+                  <p className="text-lg text-[#5a5350] leading-relaxed">
+                    Zaměřuje se na biostimulační ošetření, jemné omlazující zákroky a individuální skincare konzultace.
+                    Věří v precizní přístup, bezpečnost a správně nastavenou péči o pleť jako základ dlouhodobých
+                    výsledků.
+                  </p>
                 </div>
               </div>
             </div>
@@ -142,7 +168,7 @@ export function About() {
         </section>
 
         {/* ── Philosophy ───────────────────────────────────────── */}
-        <section className="py-20 md:py-28 bg-[#f7f5f2]">
+        <section className="py-20 md:py-28">
           <div className="max-w-6xl mx-auto px-6 md:px-12">
             <div className="grid md:grid-cols-2 gap-12 md:gap-20">
               {/* Column 1 */}
